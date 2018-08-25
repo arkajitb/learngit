@@ -6,3 +6,4 @@ git remote -v
 git push remotename branchname
 .gitignore
 git branch -v
+git checkout -b newbranch
