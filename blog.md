@@ -1,18 +1,18 @@
-###PROCESSING GDELT DATASET IN AWS CLUSTERS USING SPARK
+### PROCESSING GDELT DATASET IN AWS CLUSTERS USING SPARK
 
-####1.GDELT DATASET
+#### 1.GDELT DATASET
 
 <p>The GDelt 2.0 Global Knowledge Graph (GKG) indexes
 persons,organizations, companies, locations, themes, and even emotions from live news reports in print, broadcast and internet sources all over the world. 
 </p>
 
-####2.TASK
+#### 2.TASK
 <p>
 	The task in hand was to write an application in spark that analyzes the given dataset and constructs the 10 most talked about topics per day. To achieve this, we had to run the application for the whole dataset for which we have used AWS EMR service.It is a layer on top of EC2 which allow users to deploy Spark applications.The GDELT GKG was hosted on S3 in the US EAST Region.
 	We have used spot instances to bid for unused machines to process the data.
 </p>
 
-####3.CODE
+#### 3.CODE
 <p></p>
 
 ###4.ISSUES FACED WHILE RUNNING THE APPLICATION FOR FEW FILES
@@ -24,7 +24,7 @@ persons,organizations, companies, locations, themes, and even emotions from live
 
 </p>
 
-####5.Configuration Changes Made
+#### 5.Configuration Changes Made
 <p>
 	After reading through blogs and Spark's configuration , we collected information about different configuration parameters and used 5 configuration for our future run.
 	
@@ -37,7 +37,7 @@ persons,organizations, companies, locations, themes, and even emotions from live
 3.**spark.storage.memoryFraction**: Since we were not using any cache or persist objects, we wanted to give smallest possible value so that JVM has more memory at it's disposal for execution and tranformation tasks.
 </p>
 
-##FINAL RESULTS
+## FINAL RESULTS
 <p>
 After deciding the two implementations(dataframe and sql) and required configuration parameters, We ran our spark application over the whole GDelt dataset. We found that cluster load and cpu time for each executor node was very similar for both implementations. Though, Dataframe implementation with only SQL Queries outperformed the other implementation by **4.3 mins.**
 The Dataframe implementation using queries to replace Map/Filter functions took 16.9 mins while other implementation took **12.6mins**. More Detailed timing  can be found in Figure
