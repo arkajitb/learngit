@@ -13,11 +13,11 @@ We have used spot instances to bid for unused machines to process the data.
 #### 3.CODE
 
 ![](https://anandkanav92.github.io/sql.png)
-**Dataframe and SQL implementation**
+
 <p>
 
 But according to a report by Hortonworks,SQl shows better performance than DataFrames when you need to use Group,Sort and count functionalities.</p>
-![](https://anandkanav92.github.io/df-sql.png)
+![](https://anandkanav92.github.io/code-df-sql.png)
 
 
 #### 4.ISSUES FACED WHILE RUNNING THE APPLICATION FOR FEW FILES
