@@ -17,7 +17,7 @@ We have used spot instances to bid for unused machines to process the data.
 ![Dataframe Code2](https://anandkanav92.github.io/df-sql.png)
 
 
-### 4.ISSUES FACED WHILE RUNNING THE APPLICATION FOR FEW FILES
+#### 4.ISSUES FACED WHILE RUNNING THE APPLICATION FOR FEW FILES
 <p>
   For our initial run, We decided to use spark's default configuration for the cluster and did not modify any configurations. We faced few issues described below:
 
@@ -29,6 +29,11 @@ We have used spot instances to bid for unused machines to process the data.
 #### 5.Configuration Changes Made
 <p>
 	After reading through blogs and Spark's configuration , we collected information about different configuration parameters and used 5 configuration for our future run.
+</p>
+
+![Configuration](https://anandkanav92.github.io/config.png)
+
+<p>
 	
 1.**spark.executor.instances,spark.executor.memory,spark.executor.cores** : We fixed the number of executors and assigned fixed memory and cores to these executors to have a more balanced distribution of load. The numbers were calculated using the available number of cores, Ram and number of nodes.
 
@@ -42,11 +47,10 @@ We have used spot instances to bid for unused machines to process the data.
 ## FINAL RESULTS
 <p>
 After deciding the two implementations(dataframe and sql) and required configuration parameters, We ran our spark application over the whole GDelt dataset. We found that cluster load and cpu time for each executor node was very similar for both implementations. Though, Dataframe implementation with only SQL Queries outperformed the other implementation by **4.3 mins.**
-The Dataframe implementation using queries to replace Map/Filter functions took 16.9 mins while other implementation took **12.6mins**. More Detailed timing  can be found in Figure
+The Dataframe implementation using queries to replace Map/Filter functions took 16.9 mins while other implementation took **12.6mins**.
 
-**FIGURE**
-
-The load graph for better implementation across all implementations can be viewed in the Figure
-
- **FIGURE**
+The load graph for better implementation across all implementations can be viewed in the Figure below
 </p>
+
+ ![ImplementationGraph](https://anandkanav92.github.io/good.png)
+
