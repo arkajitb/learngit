@@ -2,20 +2,22 @@
 
 #### 1.GDELT DATASET
 
-<p>The GDelt 2.0 Global Knowledge Graph (GKG) indexes
-persons,organizations, companies, locations, themes, and even emotions from live news reports in print, broadcast and internet sources all over the world. 
+<p>The GDelt 2.0 Global Knowledge Graph (GKG) indexes persons,organizations, companies, locations, themes, and even emotions from live news reports in print, broadcast and internet sources all over the world. 
 </p>
 
 #### 2.TASK
-<p>
-	The task in hand was to write an application in spark that analyzes the given dataset and constructs the 10 most talked about topics per day. To achieve this, we had to run the application for the whole dataset for which we have used AWS EMR service.It is a layer on top of EC2 which allow users to deploy Spark applications.The GDELT GKG was hosted on S3 in the US EAST Region.
-	We have used spot instances to bid for unused machines to process the data.
+<p>The task in hand was to write an application in spark that analyzes the given dataset and constructs the 10 most talked about topics per day. To achieve this, we had to run the application for the whole dataset for which we have used AWS EMR service.It is a layer on top of EC2 which allow users to deploy Spark applications.The GDELT GKG was hosted on S3 in the US EAST Region.
+We have used spot instances to bid for unused machines to process the data.
 </p>
 
 #### 3.CODE
-<p></p>
 
-###4.ISSUES FACED WHILE RUNNING THE APPLICATION FOR FEW FILES
+![Dataframe Code](https://anandkanav92.github.io/sql.png)
+<p>But according to a report by Hortonworks,SQl shows better performance than DataFrames when you need to use Group,Sort and count functionalities.</p>
+![Dataframe Code2](https://anandkanav92.github.io/df-sql.png)
+
+
+### 4.ISSUES FACED WHILE RUNNING THE APPLICATION FOR FEW FILES
 <p>
   For our initial run, We decided to use spark's default configuration for the cluster and did not modify any configurations. We faced few issues described below:
 
